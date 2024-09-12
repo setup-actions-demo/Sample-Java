@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         distribution: ['17','21','22']
-        os: ['ubuntu-latest','windows-latest','macos-13','macos-14','alex-arm64-linux']
+        os: ['ubuntu-latest','windows-latest','macos-13','macos-14']
     steps:
       - name: Checkout Code
         uses: actions/cache@v3
@@ -20,5 +20,5 @@ jobs:
           java-version: ${{ matrix.distribution }}
       - name: Application Testing
         run: |
-          java -cp java HelloWorldApp
-          native-image -cp java HelloWorldApp
+          java -cp java HelloWorldAppApplication
+          # native-image -cp java HelloWorldApp

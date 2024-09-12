@@ -20,7 +20,8 @@ jobs:
           java-version: ${{ matrix.distribution }}
       - name: Application Testing
         run: |
-          java -cp target/classes com.test.HelloWorldApp.HelloWorldAppApplication        
+          javac -d out src/main/java/com/test/HelloWorldApp/HelloWorldAppApplication.java
+          java -cp out com.test.HelloWorldApp.HelloWorldAppApplication         
           # native-image -cp java HelloWorldApp
       - name: Maven Test
         run: mvn clean install

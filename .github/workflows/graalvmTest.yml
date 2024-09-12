@@ -18,7 +18,9 @@ jobs:
         with: 
           distribution: graalvm
           java-version: ${{ matrix.distribution }}
-      - name: Application Testing
-        run: |
-          java -cp java HelloWorldAppApplication
-          # native-image -cp java HelloWorldApp
+      # - name: Application Testing
+      #   run: |
+      #     java -cp java HelloWorldAppApplication
+      #     # native-image -cp java HelloWorldApp
+      - name: Maven Test
+        run: mvn clean install

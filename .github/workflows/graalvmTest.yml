@@ -1,0 +1,24 @@
+name: GraalVM Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        distribution: ['17','21','22']
+        os: ['ubuntu-latest','windows-latest','macos-13','macos-14','alex-arm64-linux']
+    steps:
+      - name: Checkout Code
+        uses: actions/cache@v3
+      - name: Steup Java with 21
+        uses: graalvm/setup-java@fniephaus/graalvm
+        with: 
+          distribution: graalvm
+          java-version: ${{ matrix.distribution }}
+      - name: Application Testing
+        run: |
+          java -cp java HelloWorldApp
+          native-image -cp java HelloWorldApp

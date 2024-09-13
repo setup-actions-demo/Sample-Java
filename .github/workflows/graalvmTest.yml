@@ -12,7 +12,7 @@ jobs:
         os: ['ubuntu-latest']
     steps:
       - name: Checkout Code
-        uses: actions/cache@v3
+        uses: actions/checkout@v4
       - name: Steup Java with 21
         uses: graalvm/setup-java@fniephaus/graalvm
         with: 

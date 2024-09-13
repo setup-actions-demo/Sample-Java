@@ -22,5 +22,5 @@ jobs:
         run: mvn clean install
       - name: Application Testing
         run: |
-            java -cp java HelloWorldApp
-            native-image -cp java HelloWorldApp
+            java -cp java HelloWorldAppAppliation
+         

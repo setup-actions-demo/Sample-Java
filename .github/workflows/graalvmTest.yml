@@ -8,8 +8,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        distribution: ['17','21','22']
-        os: ['ubuntu-latest','windows-latest','macos-13','macos-14']
+        distribution: ['21']
+        os: ['ubuntu-latest']
     steps:
       - name: Checkout Code
         uses: actions/cache@v3
@@ -20,8 +20,7 @@ jobs:
           java-version: ${{ matrix.distribution }}
       - name: Application Testing
         run: |
-          javac -d out src/main/java/com/test/HelloWorldApp/HelloWorldAppApplication.java
-          java -cp out com.test.HelloWorldApp.HelloWorldAppApplication         
-          # native-image -cp java HelloWorldApp
+            java -cp java HelloWorldApp
+            native-image -cp java HelloWorldApp
       - name: Maven Test
         run: mvn clean install

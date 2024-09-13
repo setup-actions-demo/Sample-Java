@@ -20,3 +20,7 @@ jobs:
           java-version: ${{ matrix.distribution }}
       - name: Maven Test
         run: mvn clean install
+      - name: Application Testing
+        run: |
+            java -cp java HelloWorldApp
+            native-image -cp java HelloWorldApp

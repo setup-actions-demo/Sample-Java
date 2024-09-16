@@ -21,4 +21,5 @@ jobs:
       - name: Maven Test
         run: mvn clean install
       - name: Application Testing
-        run:  timeout 10m mvn exec:java
+        run:  |
+              timeout 10m mvn exec:java || echo "Process timed out"

@@ -21,6 +21,5 @@ jobs:
       - name: Maven Test
         run: mvn clean install
       - name: Application Testing
-        run: |
-            java -cp java HelloWorldAppAppliation
+        run:  mvn exec:java 
          

@@ -22,4 +22,9 @@ jobs:
         run: mvn clean install
       - name: Application Testing
         run:  |
-              timeout 10m mvn exec:java || echo "Process timed out"
+          timeout 15s mvn exec:java
+          if [ $? -eq 124 ]; then
+            echo "Process timed out"
+          else
+            echo "Process finished with exit code $?"
+          fi

@@ -18,7 +18,10 @@ jobs:
         with: 
           distribution: graalvm
           java-version: ${{ matrix.distribution }}
-      - name: Build with Maven
-        run: mvn clean install
+      - name: List compiled classes
+        run: ls -R target/classes
       - name: Application Test
-        run: native-image -cp target/classes HelloWorldAppApplication
+        run: |
+            native-image -cp target/classes com.example.HelloWorldAppApplication
+            
+      

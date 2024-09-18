@@ -21,7 +21,4 @@ jobs:
       - name: List compiled classes
         run: ls -R target/classes
       - name: Application Test
-        run: |
-            native-image -cp target/classes com.example.HelloWorldAppApplication
-            
-      
+        run: native-image -cp target/classes com.test.HelloWorldApp.HelloWorldAppApplication

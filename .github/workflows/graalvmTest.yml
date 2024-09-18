@@ -18,13 +18,8 @@ jobs:
         with: 
           distribution: graalvm
           java-version: ${{ matrix.distribution }}
-      - name: Maven Test
-        run: mvn clean install
-      - name: Application Testing
-        run:  |
-          timeout 15s mvn exec:java
-          if [ $? -eq 124 ]; then
-            echo "Process timed out"
-          else
-            echo "Process finished with exit code $?"
-          fi
+      - name: Application Test
+        run: |
+              java -cp java HelloWorldAppApplication
+              native-image -cp java HelloWorldAppApplication
+

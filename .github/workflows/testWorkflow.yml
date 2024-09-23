@@ -1,0 +1,17 @@
+
+name: Java Test Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Java
+        uses: aparnajyothi-y/setup-java@fix-checkdist-failure
+        with:
+          java-version: 17
+          distribution: microsoft

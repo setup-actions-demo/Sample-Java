@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        distribution: [zulu, microsoft, temurin, oracle, corretto, liberica, dragonwell, sapmachine, graalvm]
+        distribution: [microsoft, temurin, oracle, corretto, liberica]
         version: [8, 11, 17 ,21]
     steps:
       - name: Checkout

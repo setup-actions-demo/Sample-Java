@@ -23,7 +23,7 @@ jobs:
             version: 8
           - distribution: graalvm
             version: 11
-          - distribution: sapmachin
+          - distribution: sapmachine
             version: 8
           - distribution: temurin
             version: 8

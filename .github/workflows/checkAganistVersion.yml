@@ -1,0 +1,20 @@
+name: Version Check against Ubuntu
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        distribution: [zulu, microsoft, temurin, oracle, corretto, liberica, dragonwell, sapmachine, graalvm]
+        version: [8, 11, 17 ,21]
+    steps:
+      - name: Checkout
+        uses: action/checkout@v4
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+            distribution: ${{ matrix.distribution }}
+            java-version: ${{ matrix.version }}

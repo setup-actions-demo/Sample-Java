@@ -15,9 +15,16 @@ jobs:
             version: 8
           - distribution: oracle
             version: 8
-          - distribution: oracl
+          - distribution: oracle
             version: 11
-            
+          - distribution: graalvm
+            version: 8
+          - distribution: graalvm
+            version: 11
+          - distribution: graalvm
+            version: 17
+          - distribution: dragonwell
+            version: 22
     steps:
       - name: Checkout
         uses: actions/checkout@v4

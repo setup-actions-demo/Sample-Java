@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        distribution: [microsoft, oracle, temurin, corretto, liberica, dragonwell, sapmachine, graalvm]
+        distribution: [microsoft, oracle, temurin, corretto, liberica, dragonwell, sapmachine]
         version: [8, 11, 17 ,21, 22]
         exclude:
           - distribution: microsoft

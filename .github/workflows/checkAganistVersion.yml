@@ -13,6 +13,8 @@ jobs:
         exclude:
           - distribution: microsoft
             version: 8
+          - distribution: microsoft
+            version: 22  
           - distribution: oracle
             version: 8
           - distribution: oracle
@@ -23,6 +25,10 @@ jobs:
             version: 11
           - distribution: graalvm
             version: 17
+          - distribution: temurin
+            version: 8
+          - distribution: temurin
+            version: 22
           - distribution: dragonwell
             version: 22
     steps:

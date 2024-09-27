@@ -1,4 +1,4 @@
-name: Version Check against Ubuntu
+name: Maven Check against Ubuntu
 
 on:
   workflow_dispatch:

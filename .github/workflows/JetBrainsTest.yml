@@ -1,0 +1,19 @@
+name: Jetbrains Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        jdk: ['11','17','21']
+    steps:
+      - name: Setup Checkout
+        uses: actions/checkout@v4
+      - name: Setup Java
+        uses: gmitch215/setup-java@main
+        with:
+          distribution: 'jetbrains'
+          java-version: ${{ matrix.jdk }}

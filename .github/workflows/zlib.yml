@@ -14,3 +14,4 @@ jobs:
         with:
           distribution: 'liberica'
           java-version: 11
+          architecture: 'x86'

@@ -4,10 +4,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  setup-java:
+  scala-steward:
     runs-on: ubuntu-latest
-    name: Set up JDK
-
+    name: Update Dependency
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -17,3 +16,6 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '21'
+
+      - name: Install sbt
+        uses: sbt/setup-sbt@v1

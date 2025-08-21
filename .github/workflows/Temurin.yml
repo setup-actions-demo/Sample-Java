@@ -7,6 +7,7 @@ jobs:
   buildonv4:
     runs-on: ${{ matrix.os}}
     strategy:
+      fail-fast: false
       matrix:
         os: ['ubuntu-22.04','windows-latest','macos-13','macos-latest','ubuntu-24.04','ubuntu-22.04-arm','windows-11-arm']
         jdk: ['11','17','21']
@@ -22,6 +23,7 @@ jobs:
   buildonv5:
     runs-on: ${{ matrix.os}}
     strategy:
+      fail-fast: false
       matrix:
         os: ['ubuntu-22.04','windows-latest','macos-13','macos-latest','ubuntu-24.04','ubuntu-22.04-arm','windows-11-arm']
         jdk: ['11','17','21']

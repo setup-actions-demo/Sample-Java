@@ -1,0 +1,35 @@
+name: Test temurin 17
+
+on:
+  workflow_dispatch:
+
+jobs:
+  buildonv4:
+    runs-on: ${{ matrix.os}}
+    strategy:
+      matrix:
+        os: ['ubuntu-22.04','windows-latest','macos-13','macos-latest','ubuntu-24.04','ubuntu-22.04-arm','windows-11-arm']
+        jdk: ['11','17','21']
+    steps:
+      - name: Setup Checkout
+        uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-package: 'jdk'
+          java-version: ${{ matrix.jdk }}
+
+  buildonv5:
+    runs-on: ${{ matrix.os}}
+    strategy:
+      matrix:
+        os: ['ubuntu-22.04','windows-latest','macos-13','macos-latest','ubuntu-24.04','ubuntu-22.04-arm','windows-11-arm']
+        jdk: ['11','17','21']
+    steps:
+      - name: Setup Checkout
+        uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
+        with:
+          distribution: 'temurin'
+          java-package: 'jdk'
+          java-version: ${{ matrix.jdk }}
